@@ -7,70 +7,74 @@
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Abhaya+Libre|Crimson+Text|Nixie+One|Oxygen|Port+Lligat+Slab|Quicksand|Ribeye+Marrow|Special+Elite|Trocchi|Work+Sans" rel="stylesheet">
+
+    <!-- javascript -->
+    <script src="page.js"></script>
 </head>
 
-<body class="else">
-    <header class="else">
-    <h1><a href="index.html" class="else">Flip Stitch Pillow</a></h1>
-    <p>
-    <nav>
-        <a href="products.html">products</a> - customize
-    </nav>
-    <p>
+<body>
+    <header>
+        <h1><a href="index.html">Flip Stitch Pillow</a></h1>
+        <span>about us</span>
+        <span><a href="products.html">products</a></span>
+        <span>make your own</span>
+        <span><a href="cart.html"><img class="cart" src="bag.png"></span></a>
     </header>
 
-</div>
-<p class="link">
-    <a style="margin-left: 4.5%">&nbsp;</a>
-    <a href="index.html">home</a> // <a href="products.html">products</a> // cat
-</p>
-<div class="row">
+    <p class="link">
+        <a href="index.html">home</a> // <a href="products.html">products</a> // cat
+    </p>
+    <div class="row">
 
     <div class="column product">
-        <img src="https://image.prntscr.com/image/pEfiBfr5SaC8vP2LyowO8Q.png" alt="Cat" style="margin-left: 13%">
+        <img src="https://image.prntscr.com/image/pEfiBfr5SaC8vP2LyowO8Q.png" alt="Cat" class="detail" id="cat">
     </div>
-    <div class="column info" style="margin-left: 5%">
-        <p><p>
-        <h2>cat pillow</h2>
-        <div>this hand-crafted, cat-shaped pillow can find its home at any part of your living space</div>
-        &nbsp;&nbsp;<p>
-        <div class="price"><b>$19.99</b></div>
-        &nbsp;&nbsp;<p>
-        <select name="Pillow">
-            <option value="Couch">couch pillow</option>
-            <option value="Bed">bed pillow</option>
-            <option value="Round">round pillow</option>
-            <option value="Floor">floor pouf pillow</option>
-        </select>
-        <p>
-        <textarea placeholder="customization request" rows="10"></textarea>
-        <p>
-        <button>add to cart</button>
+
+    <div class="column info">
+        <h2 id="name">cat pillow</h2>
+        <div class="price" id="price">$19.99</div>
+        <form>
+            <input type="number" value=1 min=1 id="quantity">
+        </form>
+        <div class="description">this hand-crafted, cat-shaped pillow can find its home at any part of your living space</div>
+        <div class="size" id="size">24 x 19 inches</div>
+        <div class="type">type of pillow:</div>
+        <button class="prod" id="couch" onclick="pillowType(this.id)">couch pillow</button>
+        <button class="prod" id="bed" onclick="pillowType(this.id)">bed pillow</button>
+        <button class="prod" id="round" onclick="pillowType(this.id)">round pillow</button>
+        <button class="prod" id="floor" onclick="pillowType(this.id)">floor pouf pillow</button>
+
+        <textarea placeholder="customization requests: embroidery, color, sizing, etc." rows="10" id="custom"></textarea>
+
+        <button class="cart" onclick="addToBag()">add to cart</button>
+        <button class="wishlist"> add to wishlist</button>
     </div>
-</div>
-<div class="clearfix"></div>
-<p><p>
-<div class="row">
-    <p><p></p></p>
-    <a style="margin-left: 4.5%; font-size: 15px;">&nbsp;more products</a><p>
 
-    <a href="square.html">
-        <img src="https://image.prntscr.com/image/AD9nItmRRDivjJ9jAEtqmQ.png" alt="Square" class="more" style="margin-left: 4.8%; margin-right:1%;">
-    </a>
-    <a href="round.html">
-        <img src="https://image.prntscr.com/image/2ZWzw6T4SBW71ZXv25sKJg.png" alt="Round" class="more" style="margin-right:1%">
-    </a>
-    <a href="bear.html">
-        <img src="https://image.prntscr.com/image/VBZkjZZSRBmajJOKOjlIKg.png" alt="Bear" class="more" style="margin-right: 1%";>
-    </a>
-    <a href="bunny.html">
-        <img src="https://image.prntscr.com/image/BVkFGm-gTP2uOFAYvThV4w.png" alt="Bunny" class="more" style="margin-right:1%;">
-    </a>
-    <a href="dog.html">
-        <img src="https://image.prntscr.com/image/I6SMMSnVQpqoq-qUJiZizQ.png" alt="Dog" class="more" style="margin-right:1%;">
-    </a>
+    <div class="clearfix"></div>
 
-</div>
+    <div class="rowtext">more products</div>
+    <div class="row2">
+
+        <img src="leftarrow.png" class="arrow" onclick="plusDivs(-1)">
+
+        <a href="square.html">
+            <img src="https://image.prntscr.com/image/AD9nItmRRDivjJ9jAEtqmQ.png" alt="Square" class="more">
+        </a>
+        <a href="round.html">
+            <img src="https://image.prntscr.com/image/2ZWzw6T4SBW71ZXv25sKJg.png" alt="Round" class="more">
+        </a>
+        <a href="bear.html">
+            <img src="https://image.prntscr.com/image/VBZkjZZSRBmajJOKOjlIKg.png" alt="Bear" class="more" style="display: none;">
+        </a>
+        <a href="bunny.html">
+            <img src="https://image.prntscr.com/image/BVkFGm-gTP2uOFAYvThV4w.png" alt="Bunny" class="more" style="display: none;">
+        </a>
+        <a href="dog.html">
+            <img src="https://image.prntscr.com/image/I6SMMSnVQpqoq-qUJiZizQ.png" alt="Dog" class="more" style="display: none;">
+        </a>
+
+        <img src="rightarrow.png" class="arrow" onclick="plusDivs(1)">
+    </div>
 
 </body>
 

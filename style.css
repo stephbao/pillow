@@ -1,72 +1,62 @@
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     color: grey;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
 
-body.home {
-    background: url("bg.jpg") no-repeat;
-    background-position: center top;
-    background-size: 100% auto;
 }
-
-body.else {
-    background-color: white;
-}
-
 
 /*********** HEADER ************/
 
 header {
-    font-family: 'Trocchi', serif;
+    font-family: 'Work Sans', serif;
     background-color: white;
-    color: white;
+    color: #4A4A4A;
     text-transform: bold;
     padding: 11px;
-    text-align: center;
     letter-spacing: 2px;
 }
 
-header.home {
-    background-color: white;
-    opacity: .6;
-    color: #5B1723
-}
-
-header.else {
-    background: url("header.jpg") no-repeat;
-    background-position: center top;
-    background-size: 100%;
-    color: white;
-    opacity: .4;
-    text-decoration: none;
-}
-
-header a.home {
-    color: inherit;
+header a {
+    color: #4A4A4A;
     text-decoration: none;
     padding: 5px;
+    margin: 0px;
 }
 
-header a.else {
-    color: inherit;
-    text-decoration: none;
-    padding: 5px;
+header > h1 {
+    display: inline-block;
+}
+
+header span {
+    margin-left: 100px;
 }
 
 h1 {
     -webkit-text-stroke-width: 1px;
     font-family: 'Work Sans', serif;
-    margin: 0;
+    text-align: left;
+    padding-top: 1%;
+    padding-left: 5%;
+    margin: 0px;
+    color: #4A4A4A;
     text-decoration: none;
 }
 
+h2 {
+    color: #686868;
+    font-size: 26px;
+    margin: 0px;
+    margin-bottom: 3%;
+    text-decoration: underline;
+}
+
+h3 {
+    margin-left: 6.2%;
+    margin-bottom: 3%;
+}
+
 a {
-    color: inherit;
+    color: #4A4A4A;
     font-family: 'Work Sans', serif;
     text-align: left;
     text-decoration: none;
@@ -78,23 +68,68 @@ div {
     text-align: left;
 }
 
+.container {
+    position: relative;
+    text-align: center;
+}
+
+.text {
+    position: absolute;
+    margin-right: 2%
+}
+
 img {
-    margin-top: 10px;
+    margin-top: 1%;
+    margin-left: 5%;
     width: 90%;
     border: 1px solid #eaeaea;
+}
+
+img.arrow {
+    width: 2%;
+    height: 2%;
+    border: none;
+    vertical-align: top;
+    float: center;
+}
+
+img.cart {
+    width: 2%;
+    height: 2%;
+    border: none;
+}
+
+img.cart:hover {
+    box-shadow: 0 0 0px 0px #5B1723;
+}
+
+img.product {
+    margin-left: 4.5%;
+    margin-top: 4%;
+    width: 40%;
+}
+
+img.detail {
+    width: 83%;
 }
 
 img.more {
     width: 150px;
     height: 150px;
+    float: center;
 }
 
 p {
-    font-size: inherit;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 2%;
 }
 
 p.link{
+    text-align: left;
     font-size: 13px;
+    margin-left: 6.2%;
+    margin-top: 1%;
 }
 
 img:hover {
@@ -115,6 +150,7 @@ img:hover {
 }
 
 .desc {
+    font-size: 18px;
     padding: 15px;
     text-align: center;
     color: grey;
@@ -138,7 +174,7 @@ img:hover {
 }
 
 .column.padding {
-    width: 5%;
+    width: 4.5%;
 }
 
 .first {
@@ -156,14 +192,14 @@ img:hover {
 }
 
 .column.product {
-    width: 40%;
+    margin-left: 4.3%;
+    width: 45%;
     padding: 0px;
 }
 
 .column.info {
     width: 40%;
     padding: 0px;
-    padding-right: 17px
 }
 
 .column.about {
@@ -175,9 +211,9 @@ img:hover {
 }
 
 .textbox {
-    margin-left: 75%;
-    margin-right: 2%;
-    margin-top: 16%;
+    margin-left: 70%;
+    margin-right: 3%;
+    margin-top: 3%;
     background-color: white;
     opacity: .3;
     font-size: 15px;
@@ -205,6 +241,22 @@ p.second {
     padding-bottom: 20px;
 }
 
+.rowtext {
+    font-size: 13px;
+    margin-left: 6.3%;
+    margin-top: 3%
+}
+.row2 {
+    margin-top: 1%;
+    margin-left: 1.6%;
+}
+
+.row2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .row:after {
     content: "";
     display: table;
@@ -230,7 +282,27 @@ p.second {
     clear: both;
 }
 
+.description {
+    font-size: 13px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.type {
+    font-size: 13px;
+    margin-top: 3%;
+}
+
+.size {
+    font-size: 13px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
 .price {
+    color: #686868;
+    margin-top: 2%;
+    margin-bottom: 2%;
     text-decoration: bold;
     font-size: 20px
 }
@@ -246,11 +318,31 @@ button {
     transition: 0.4s ease;
 }
 
-button:hover {
+button.cart {
+    width: 95%;
+    background-color: black;
     color: white;
-    padding:5.5px;
-    background-color: grey;
-    border: .5px solid grey;
+}
+
+button.cart:hover {
+    background-color: #66CC99;
+}
+
+button.wishlist {
+    width: 95%;
+    margin-top: 1%;
+}
+
+button.wishlist:hover {
+    border-color: #66CC99;
+    background-color: white;
+    color: grey;
+}
+
+button.prod {
+    margin-top: 1%;
+    width: 23%;
+    padding: 2%;
 }
 
 input {
@@ -263,6 +355,8 @@ textarea {
     border-radius: 2px;
     border-color: grey;
     width: 95%;
+    margin-top: 5%;
+    margin-bottom: 6.5%;
 }
 
 nav {
@@ -281,4 +375,18 @@ select {
 
 select.name {
     font-weight: 700;
+}
+
+input {
+    width: 50px;
+    text-align: left;
+    font-size: 13px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 2px;
+}
+
+hr {
+    margin-left: 6.2%;
+    width: 50%;
 }
