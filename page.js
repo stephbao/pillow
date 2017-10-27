@@ -1,12 +1,21 @@
 var index = 1;
 var bag = new Array();
-var length = 0;
+var images = new Array();
+var names = new Array();
+var prices = new Array();
+var quantities = new Array();
+var customs = new Array();
+var sizes = new Array();
+var itemList = new Array();
+
 showDivs(index);
 
+//index of the second element shown
 function plusDivs(n) {
   showDivs(index += n);
 }
 
+//show 2 elements at a time in carousel
 function showDivs(n) {
   var i;
   var more = document.getElementsByClassName("more");
@@ -19,6 +28,7 @@ function showDivs(n) {
   more[index].style.display = "inline";
 }
 
+//change information on product detail page based off of type of pillow selected
 function pillowType(id) {
   var i;
   var property = document.getElementById(id);
@@ -56,23 +66,60 @@ function pillowType(id) {
   }
 }
 
+//create pillow object with details
 function Pillow() {
-  this.image = document.getElementById("cat");
-  this.name = document.getElementById("name");
-  this.price = document.getElementById("price");
-  this.quantity = document.getElementById("quantity");
-  this.size = document.getElementById("size");
-  this.custom = document.getElementById("custom");
+  this.image = document.getElementById("cat").src;
+  this.name = document.getElementById("name").innerHTML;
+  this.price = document.getElementById("price").innerHTML;
+  this.quantity = document.getElementById("quantity").value;
+  this.size = document.getElementById("size").innerHTML;
+  this.custom = document.getElementById("custom").value;
 }
 
+//first attempt to add to localstorage, could not figure out what to do after
 function addToBag() {
-  var pillow = Pillow()
+  var pillow = new Pillow()
   bag.push(pillow);
-  length += 1;
-  console.log(length["size"]);
+  localStorage.setItem("pillows", JSON.stringify(bag));
+  bag = JSON.parse(localStorage.getItem("pillows"));
+  if (localStorage.getItem("num") == null) { localStorage.setItem("num", "0")}
+  var num = JSON.parse(localStorage.getItem("num"));
+  num = parseInt(num, 10) + 1;
+  console.log(num);
+  localStorage.setItem("num", JSON.stringify(num));
+  document.getElementById("num").innerHTML = JSON.parse(localStorage.getItem("num"));
+
+  for (i = 0; i < JSON.parse(localStorage.getItem("pillows")).length; i++) {
+    images.push(JSON.parse(localStorage.getItem("pillows"))[i].image)
+    names.push(JSON.parse(localStorage.getItem("pillows"))[i].name)
+    prices.push(JSON.parse(localStorage.getItem("pillows"))[i].price)
+    quantities.push(JSON.parse(localStorage.getItem("pillows"))[i].quantity)
+    sizes.push(JSON.parse(localStorage.getItem("pillows"))[i].size)
+    customs.push(JSON.parse(localStorage.getItem("pillows"))[i].custom)
+  }
+  localStorage.setItem("images", JSON.stringify(images));
+  localStorage.setItem("names", JSON.stringify(names));
+  localStorage.setItem("prices", JSON.stringify(prices));
+  localStorage.setItem("quantities", JSON.stringify(quantities));
+  localStorage.setItem("sizes", JSON.stringify(sizes));
+  localStorage.setItem("customs", JSON.stringify(customs));
 }
 
-localStorage.setItem("pillows", JSON.stringify(bag));
-var localBag = JSON.parse(localStorage.getItem("pillows"));
+//second attempt based on lab, bugged
+function addListItem() {
+  //var itemInput = new Pillow();
+  var newItem = document.createElement("li");
+  newItem.appendChild(document.createTextNode(new Pillow()));
+  itemList.appendChild(newItem);
+  localStorage.setItem("listPillows", JSON.stringify(list));
+  if (localStorage.getItem("num") == null) { localStorage.setItem("num", "0")}
+  var num = JSON.parse(localStorage.getItem("num"));
+  num = parseInt(num, 10) + 1;
+  localStorage.setItem("num", JSON.stringify(num));
+  document.getElementById("num").innerHTML = JSON.parse(localStorage.getItem("num"));
+}
 
-localBag
+function deleteListItem(item) {
+    // remove li element (item) from ol element (item.parentNode)
+    item.parentNode.removeChild(item);
+}

@@ -31,6 +31,18 @@ header span {
     margin-left: 100px;
 }
 
+/* show number of products in bag */
+#num {
+    margin-left: 7.5%;
+    margin-right: 0px;
+}
+
+/* bag image */
+#bag {
+    margin-left: 0px;
+}
+
+/* text edits */
 h1 {
     -webkit-text-stroke-width: 1px;
     font-family: 'Work Sans', serif;
@@ -68,16 +80,42 @@ div {
     text-align: left;
 }
 
-.container {
-    position: relative;
-    text-align: center;
-}
-
 .text {
     position: absolute;
     margin-right: 2%
 }
 
+p {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 2%;
+}
+
+p.link{
+    text-align: left;
+    font-size: 13px;
+    margin-left: 6.2%;
+    margin-top: 1%;
+}
+
+p.second {
+    padding-top: 0px;
+    padding-bottom: 20px;
+}
+
+.rowtext {
+    font-size: 13px;
+    margin-left: 6.3%;
+    margin-top: 3%
+}
+
+/* container */
+.container {
+    position: relative;
+    text-align: center;
+}
+
+/* images */
 img {
     margin-top: 1%;
     margin-left: 5%;
@@ -97,6 +135,7 @@ img.cart {
     width: 2%;
     height: 2%;
     border: none;
+    margin-left: -10px;
 }
 
 img.cart:hover {
@@ -119,22 +158,11 @@ img.more {
     float: center;
 }
 
-p {
-    font-size: 13px;
-    text-align: center;
-    margin-top: 2%;
-}
-
-p.link{
-    text-align: left;
-    font-size: 13px;
-    margin-left: 6.2%;
-    margin-top: 1%;
-}
-
 img:hover {
     box-shadow: 0 0 2px 1px #5B1723;
 }
+
+/* product gallery */
 
 .gallery img {
     transition: .5s ease;
@@ -172,6 +200,8 @@ img:hover {
     width: 30%;
     text-align: center;
 }
+
+/*product detail*/
 
 .column.padding {
     width: 4.5%;
@@ -236,16 +266,6 @@ img:hover {
     padding-top: 20px;
 }
 
-p.second {
-    padding-top: 0px;
-    padding-bottom: 20px;
-}
-
-.rowtext {
-    font-size: 13px;
-    margin-left: 6.3%;
-    margin-top: 3%
-}
 .row2 {
     margin-top: 1%;
     margin-left: 1.6%;
@@ -307,6 +327,8 @@ p.second {
     font-size: 20px
 }
 
+/* buttons */
+
 button {
     color: grey;
     font-family: 'Work Sans', serif;
@@ -344,6 +366,13 @@ button.prod {
     width: 23%;
     padding: 2%;
 }
+
+#couch {
+    background-color: grey;
+    color: white;
+}
+
+/* customization area */
 
 input {
     padding: 10px;
@@ -386,7 +415,28 @@ input {
     padding-right: 2px;
 }
 
+/* line */
 hr {
     margin-left: 6.2%;
     width: 50%;
+}
+
+/* list code found from lab */
+
+#todo-lists {
+    margin: 0 auto;
+    padding-top: 10px;
+    width: 60%;
+    margin-left: 6%;
+}
+
+.list {
+    border: 1px solid grey;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.list a {
+    text-decoration: none;
+    color: grey;
 }

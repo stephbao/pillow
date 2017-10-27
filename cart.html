@@ -15,11 +15,24 @@
         <span>about us</span>
         <span><a href="products.html">products</a></span>
         <span>make your own</span>
-        <span><a href="cart.html"><img class="cart" src="bag.png"></span></a>
+        <span id="num">0</span>
+        <span id="bag"><a href="cart.html"><img class="cart" src="bag.png"></span></a>
     </header>
 
     <h3>Shopping Cart</h3>
     <hr>
+    <div id="container">
+        <div id="todo-lists">
+            <div class="list">
+                <ul id="item-list">
+                    <li>empty cart<button class="delete-item">X</button></li>
+                </ul>
+
+            </div>
+            <input id="new-list-item" type="text"></input>
+            <button id="add-item">Add Item</button>
+        </div>
+    </div>
 </body>
 
 </html>
